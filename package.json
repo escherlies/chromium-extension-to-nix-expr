@@ -1,0 +1,16 @@
+{
+  "name": "nix-expression-copier",
+  "version": "1.0.0",
+  "description": "Chrome extension that copies extension ID and title as a Nix expression",
+  "type": "module",
+  "scripts": {},
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "module": "index.ts",
+  "engines": {
+    "bun": ">=1.0.0"
+  }
+}

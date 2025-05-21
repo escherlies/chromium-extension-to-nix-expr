@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Nix Expression Copier for Chrome Extensions",
+  "version": "1.0.0",
+  "description": "Copies extension ID and title as a Nix expression",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "Copy as Nix Expression"
+  },
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chromewebstore.google.com/detail/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "https://chromewebstore.google.com/detail/*"
+  ]
+}

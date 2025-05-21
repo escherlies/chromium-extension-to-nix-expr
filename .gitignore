@@ -1,0 +1,16 @@
+# Build artifacts
+nix-expression-copier.tar.gz
+
+# Node.js dependencies
+node_modules/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nix Expression Copier</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      width: 300px;
+      padding: 15px;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      font-size: 18px;
+      color: #333;
+      margin-top: 0;
+    }
+    .container {
+      background-color: white;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .info {
+      margin-bottom: 15px;
+    }
+    .label {
+      font-weight: bold;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+    .value {
+      font-family: monospace;
+      background-color: #f0f0f0;
+      padding: 8px;
+      border-radius: 4px;
+      word-break: break-all;
+      font-size: 13px;
+      border: 1px solid #ddd;
+    }
+    .nix-expression {
+      margin-top: 15px;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 13px;
+      border: 1px solid #ddd;
+    }
+    button {
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 15px;
+      width: 100%;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: #3367d6;
+    }
+    button:active {
+      background-color: #2a56c6;
+    }
+    .success {
+      background-color: #34a853;
+    }
+    .error {
+      background-color: #ea4335;
+    }
+    .message {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 14px;
+      height: 20px;
+    }
+    .not-extension-page {
+      color: #ea4335;
+      text-align: center;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Nix Expression Copier</h1>
+    
+    <div id="extension-info">
+      <div class="info">
+        <div class="label">Extension ID:</div>
+        <div id="extension-id" class="value">Loading...</div>
+      </div>
+      
+      <div class="info">
+        <div class="label">Extension Title:</div>
+        <div id="extension-title" class="value">Loading...</div>
+      </div>
+      
+      <div class="label">Nix Expression:</div>
+      <div id="nix-expression" class="nix-expression">Loading...</div>
+      
+      <button id="copy-button">Copy Nix Expression</button>
+      
+      <div id="message" class="message"></div>
+    </div>
+    
+    <div id="not-extension-page" class="not-extension-page" style="display: none;">
+      This is not a Chrome extension page.<br>
+      Please navigate to the Chrome Web Store or chrome://extensions page.
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
