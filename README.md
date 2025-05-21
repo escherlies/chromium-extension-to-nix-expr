@@ -1,5 +1,12 @@
 # Nix Expression Copier for Chrome Extensions
 
+```nix
+  programs.chromium.extensions = [
+    { id = "eimadpbcbfnmbkopoojfekhnkhdbieeh"; } # Dark Reader
+    { id = "lnjaiaapbakfhlbjenjkhffcdpoompki"; } # Catppuccin for Web File Explorer Icons
+  ];
+```
+
 A Chrome extension that copies extension ID and title as a Nix expression format.
 
 ## Features
