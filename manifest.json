@@ -22,16 +22,6 @@
     "clipboardWrite",
     "tabs"
   ],
-  "content_scripts": [
-    {
-      "matches": [
-        "https://chromewebstore.google.com/detail/*"
-      ],
-      "js": [
-        "content.js"
-      ]
-    }
-  ],
   "background": {
     "service_worker": "background.js"
   },

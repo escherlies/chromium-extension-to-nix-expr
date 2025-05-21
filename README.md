@@ -1,4 +1,4 @@
-# Nix Expression Copier for Chrome Extensions
+# Nix Expression Copier for Chromium Extensions
 
 ```nix
   programs.chromium.extensions = [
@@ -7,12 +7,11 @@
   ];
 ```
 
-A Chrome extension that copies extension ID and title as a Nix expression format.
+A Chromium extension that copies extension ID and title as a Nix expression format.
 
 ## Features
 
 - Works on Chrome Web Store extension pages
-- Adds a button to the page for easy copying
 - Provides a popup interface when clicking the extension icon
 - Formats the extension ID and title as a Nix expression: `{ id = "extension-id"; } # Extension Title`
 
@@ -21,10 +20,10 @@ A Chrome extension that copies extension ID and title as a Nix expression format
 Since this extension is not published to the Chrome Web Store, you'll need to install it in developer mode:
 
 1. Download or clone this repository to your local machine
-2. Open Chrome and navigate to `chrome://extensions/`
+2. Open your Chromium-based browser and navigate to the extensions page (e.g., `chrome://extensions/`)
 3. Enable "Developer mode" by toggling the switch in the top-right corner
 4. Click "Load unpacked" and select the directory containing the extension files
-5. The extension should now be installed and visible in your Chrome toolbar
+5. The extension should now be installed and visible in your browser toolbar
 
 You can also use the justfile to help with installation:
 
@@ -34,16 +33,10 @@ just install
 
 ## Usage
 
-### Method 1: Using the Content Script Button
+### Using the Popup
 
-1. Navigate to a Chrome extension page on the Chrome Web Store (e.g., https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh)
-2. A "Copy as Nix Expression" button will appear in the bottom-right corner of the page
-3. Click the button to copy the extension ID and title as a Nix expression to your clipboard
-
-### Method 2: Using the Popup
-
-1. Navigate to a Chrome extension page on the Chrome Web Store
-2. Click the extension icon in the Chrome toolbar
+1. Navigate to a Chrome Web Store extension page
+2. Click the extension icon in the browser toolbar
 3. The popup will display the extension ID, title, and the formatted Nix expression
 4. Click the "Copy Nix Expression" button to copy the formatted text to your clipboard
 
@@ -60,8 +53,9 @@ The extension works with the Chrome Web Store URL format:
 
 ## Limitations
 
-- Due to Chrome's security restrictions, the extension cannot directly access the chrome://extensions page
-- For chrome://extensions pages, use the Chrome Web Store page of the extension instead
+- Due to browser security restrictions, the extension cannot directly access the extensions page
+- For extensions pages, use the Chrome Web Store page of the extension instead
+- Chrome Web Store pages are protected by the browser, so the extension can only work through the popup interface
 
 ## Development
 
@@ -82,7 +76,7 @@ just clean
 # Bump version (major, minor, or patch)
 just bump-version [major|minor|patch]
 
-# Open Chrome extensions page for installation
+# Open extensions page for installation
 just install
 ```
 

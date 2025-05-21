@@ -45,4 +45,3 @@ install:
     @echo "1. Open Chrome and navigate to chrome://extensions/"
     @echo "2. Enable 'Developer mode' by toggling the switch in the top-right corner"
     @echo "3. Click 'Load unpacked' and select this directory"
-    google-chrome chrome://extensions/ || xdg-open chrome://extensions/ || open chrome://extensions/
